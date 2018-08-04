@@ -37,7 +37,7 @@ If you want to use a different configuration file, pass the configuration file t
     my_bot = TwitterBot("my-other-bot-config.txt")
     
 ## Note for me
-
+https://www.codementor.io/officehours/5519386452/build-chatbot-python-deploy-vps?icn=post-m7o96jger&ici=OH130
 https://www.codementor.io/djangostars/create-deploy-telegram-bot-python-7jggn472x
 
 ## Have questions? Need help with the bot?

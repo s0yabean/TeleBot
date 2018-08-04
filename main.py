@@ -1,7 +1,7 @@
 import requests
 import datetime
 
-token = ''
+token = '582681400:AAHnLEWGvB5PaLjr-r3ziIU3ZdQ7PPEkkuQ'
 
 class BotHandler:
 
@@ -12,10 +12,9 @@ class BotHandler:
     def get_updates(self, offset=None, timeout=30):
         method = 'getUpdates'
         params = {'timeout': timeout, 'offset': offset}
-        resp = requests.get(self.api_url + method, params)
-        result_json = resp.json()
-        print(result_json)
-        print(result_json['result'])
+        resp = requests.get(self.api_url +
+                            method, params)
+        result_json = resp.json()['result']
         return result_json
 
     def send_message(self, chat_id, text):
@@ -65,6 +64,8 @@ def main():
         elif last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
             greet_bot.send_message(last_chat_id, 'Good Evening  {}'.format(last_chat_name))
             today += 1
+        elif last_chat_text.lower() == 'my name':
+            greet_bot.send_message(last_chat_id, 'Tung dep trai'.format(last_chat_name))
 
         new_offset = last_update_id + 1
 
