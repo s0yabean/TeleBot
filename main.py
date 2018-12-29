@@ -1,6 +1,4 @@
-import os #For creating HTTP server, and for hiding the telegram token 
-load_dotenv(verbose=True) #dotenv is the package that does the token hiding
-SECRET_KEY = os.getenv("TELEGRAM_TOKEN")
+import os #For creating HTTP server
 
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
@@ -126,7 +124,7 @@ def error_callback(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater(SECRET_KEY)
+    updater = Updater("725959580:AAHBI0I0A023e6sXw1ErIPYWPU86iBLEhp4")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
