@@ -39,11 +39,14 @@ now = datetime.datetime.now()
 
 
 def main():
+    print('Main Function Ran!');
     new_offset = None
     today = now.day
     hour = now.hour
+    
 
     while True:
+        print('In TRUE Loop');
         greet_bot.get_updates(new_offset)
 
         last_update = greet_bot.get_last_update()
