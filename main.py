@@ -1,4 +1,7 @@
-import os
+import os #For creating HTTP server, and for hiding the telegram token 
+load_dotenv(verbose=True) #dotenv is the package that does the token hiding
+SECRET_KEY = os.getenv("TELEGRAM_TOKEN")
+
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
@@ -123,7 +126,7 @@ def error_callback(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("725959580:AAHBI0I0A023e6sXw1ErIPYWPU86iBLEhp4")
+    updater = Updater(SECRET_KEY)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -171,5 +174,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-    port = os.getenv('PORT', default=8000)
-    updater.start_webhook(port=port)
+    
+    port = os.getenv('PORT', default=8000) #creating HTTP server server to tell Heroku to bind to to receive requests with tele API
+    updater.start_webhook(port=port) # Connecting port to tele API
