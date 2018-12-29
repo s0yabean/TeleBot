@@ -1,4 +1,4 @@
-import os #For creating HTTP server
+import os #For creating HTTP server and for bringing secret tokens into environment
 
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
@@ -124,7 +124,7 @@ def error_callback(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater(TELEGRAM_TOKEN)
+    updater = Updater(os.environ.get('TELEGRAM_TOKEN'))
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
