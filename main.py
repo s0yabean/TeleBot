@@ -1,3 +1,4 @@
+import os
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
@@ -170,3 +171,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    port = os.getenv('PORT', default=8000)
+    updater.start_webhook(port=port)
