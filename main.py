@@ -123,9 +123,6 @@ def error_callback(bot, update, error):
         logger.warning('handle all other telegram related errors', update, error)
 
 def main():
-    # Create the EventHandler and pass it your bot's token.
-    # updater = Updater(os.environ.get('TELEGRAM_TOKEN'))
-    updater = Updater("725959580:AAHBI0I0A023e6sXw1ErIPYWPU86iBLEhp4")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -174,5 +171,10 @@ def main():
 if __name__ == '__main__':
     main()
     
+    # Create the EventHandler and pass it your bot's token.
+    # updater = Updater(os.environ.get('TELEGRAM_TOKEN'))
+    updater = Updater("725959580:AAHBI0I0A023e6sXw1ErIPYWPU86iBLEhp4")
+    
     port = os.getenv('PORT', default=8000) #creating HTTP server server to tell Heroku to bind to to receive requests with tele API
     updater.start_webhook(port=port) # Connecting port to tele API
+    
