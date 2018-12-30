@@ -124,7 +124,8 @@ def error_callback(bot, update, error):
 
 def main():
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater(os.environ.get('TELEGRAM_TOKEN'))
+    # updater = Updater(os.environ.get('TELEGRAM_TOKEN'))
+    updater = Updater("725959580:AAHBI0I0A023e6sXw1ErIPYWPU86iBLEhp4")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
